@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'calculadora/formulario.css' %}">
+<title>Calculadora T2018</title>
+</head>
+<body>
+<hr/>
+<div>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Calcular</button>
+</form>
+<hr/>
+{% if rta %}
+<h2>La suma de <b class="num">{{n1}}</b> y <b class="num">{{n2}}</b> es:
+  <b class="num">{{rta}}</b></h2>
+{% endif %}
+  </div>
+</body>
+</html>
